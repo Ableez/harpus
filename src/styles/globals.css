@@ -1,3 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.pixelify-sans-pixel {
+  font-family: "Pixelify Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Pixelify Sans", serif;
+  @apply bg-textured text-white;
+}
+
+.bg-textured {
+  background-color: #111;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23333' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+@keyframes neon-glow {
+  0%,
+  100% {
+    text-shadow:
+      0 0 5px #ffffff22,
+      0 0 10px #ffffff22,
+      0 0 15px #ffffff22,
+      0 0 20px "#eb00000",
+      0 0 35px "#eb00000",
+      0 0 40px "#eb00000",
+      0 0 50px "#eb00000",
+      0 0 75px "#eb00000";
+  }
+  50% {
+    text-shadow:
+      0 0 2.5px #ffffff22,
+      0 0 5px #ffffff22,
+      0 0 7.5px #ffffff22,
+      0 0 10px "#eb0000",
+      0 0 17.5px "#eb0000",
+      0 0 20px "#eb0000",
+      0 0 25px "#eb0000",
+      0 0 37.5px "#eb0000";
+  }
+}
+
+.neon-text {
+  @apply animate-[neon-glow_1.5s_ease-in-out_infinite];
+}
+
+.pixel-button {
+  @apply border-b-4 border-r-4 border-green-600 bg-green-400 px-4 py-2 font-bold text-black active:border-b-0 active:border-l-4 active:border-r-0 active:border-t-4;
+}
+
+.pixel-button:hover {
+  @apply border-yellow-600 bg-yellow-400;
+}
